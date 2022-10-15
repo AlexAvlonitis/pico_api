@@ -9,6 +9,7 @@ Example demo project can be found [here](https://github.com/alexavlonitis/pico_a
 
 ## Libraries Used
 
+- Rack -> Backbone
 - [roda](https://github.com/jeremyevans/roda) -> Routing
 - [rom-rb](https://github.com/rom-rb/rom) -> ORM
 - [jsonapi serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) -> Fast-jsonapi fork
