@@ -1,0 +1,13 @@
+PicoApi.configure do |config|
+  ## the base namespace of your app
+  config.namespace       = "<%= @project_name_camelcased %>"
+
+  ## the root directory where all the business logic resides
+  config.lib_path        = "lib/<%= @project_name_snakecased %>"
+
+  ## Add your custom exception mappings -> { exception: status_code }.
+  # PicoApi serializes runtime exceptions to json-api specification error objects
+  config.errors_map = {
+    StandardError: :unprocessable_entity
+  }.freeze
+end

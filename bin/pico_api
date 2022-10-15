@@ -1,0 +1,14 @@
+
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'pico_api'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: pico_api [options]"
+
+  opts.on('-n', '--new project_name') { |o| options[:project_name] = o }
+end.parse!
+
+PicoApi::Generators::Generator.call(options[:project_name])

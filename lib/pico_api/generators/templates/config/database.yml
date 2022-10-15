@@ -1,0 +1,8 @@
+# https://rom-rb.org/5.0/learn/sql/#general-connection-options
+
+default:
+  adapter:
+  connection_string:
+  options:
+    encoding:
+

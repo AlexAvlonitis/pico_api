@@ -1,0 +1,9 @@
+require "pico_api"
+require "./config/dotenv" if ENV['PICO_API_ENV'] == "development"
+require "./config/configuration"
+require "./config/database_setup"
+require "./config/application"
+
+loader = Zeitwerk::Loader.new
+loader.push_dir("./lib")
+loader.setup

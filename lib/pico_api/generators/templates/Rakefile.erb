@@ -1,0 +1,9 @@
+require "pico_api"
+require "./config/dotenv"
+require 'rom/sql/rake_task'
+
+namespace :db do
+  task :setup do
+    ROM::SQL::RakeSupport.env = ROM.container(default: [:sql, ENV.fetch("DB_CONNECTION_STRING")])
+  end
+end
