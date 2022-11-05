@@ -9,15 +9,21 @@ module PicoApi
       attr_accessor :container
 
       def setup!
-        database_config = PicoApi.configuration.db_config['default']
-        adapter = database_config['adapter'].to_sym
-        options = database_config['options'].symbolize_keys
-        connection_string = database_config['connection_string']
+        database_config = PicoApi.configuration.db_config.deep_symbolize_keys
+        gateways = database_config.keys
 
-        config = ROM::Configuration.new(adapter, connection_string, options)
-        yield config if block_given?
+        configs = gateways.inject({}) do |memo, gateway|
+          adapter = database_config.dig(gateway, :adapter)&.to_sym
+          options = database_config.dig(gateway, :options)
+          connection_string = database_config.dig(gateway, :connection_string)
 
-        @container = ROM.container(config)
+          memo[gateway] = [adapter, connection_string, **options]
+          memo
+        end
+
+        @container = ROM.container(**configs) do |config|
+          yield config if block_given?
+        end
       end
     end
   end

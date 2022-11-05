@@ -22,12 +22,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.executables << 'pico_api'
 
-  spec.add_runtime_dependency 'erb', '~> 2.2.3'
-  spec.add_runtime_dependency 'jsonapi-serializer', '~> 2.2.0'
-  spec.add_runtime_dependency 'rackup', '~> 0.2.2'
-  spec.add_runtime_dependency 'rake', '~> 13.0.6'
-  spec.add_runtime_dependency 'roda', '~> 3.61.0'
-  spec.add_runtime_dependency 'rom', '~> 5.2.6'
-  spec.add_runtime_dependency 'rom-sql', '~> 3.5.0'
-  spec.add_runtime_dependency 'zeitwerk', '~> 2.6.1'
+  spec.add_runtime_dependency 'erb', '~> 2'
+  spec.add_runtime_dependency 'jsonapi-serializer', '~> 2'
+  spec.add_runtime_dependency 'rackup', '~> 0.2'
+  spec.add_runtime_dependency 'rake', '~> 13'
+  spec.add_runtime_dependency 'roda', '~> 3'
+  spec.add_runtime_dependency 'rom', '~> 5'
+  spec.add_runtime_dependency 'rom-sql', '~> 3.5'
+  spec.add_runtime_dependency 'zeitwerk', '~> 2.6'
 end

@@ -44,7 +44,7 @@ Migration info: https://rom-rb.org/5.0/learn/sql/migrations/
 - [x] Handle Errors
 - [ ] Create a Logger config
 - [ ] Create a testing environment
-- [ ] Allow multiple db gateways in the config
+- [x] Allow multiple db gateways in the config
 - [ ] Add irb/pry console script
 
 ## Contributing
