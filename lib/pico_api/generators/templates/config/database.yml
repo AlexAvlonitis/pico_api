@@ -6,3 +6,9 @@ default:
   options:
     encoding:
 
+# Additional gateways supported
+# legacy:
+#   adapter:
+#   connection_string:
+#   options:
+#     encoding:
