@@ -1,7 +1,7 @@
 # Pico API
 
 A tiny boilerplate JSON API template in ruby. Its minimal footprint makes it ideal for microservices or even full blown APIs.
-It has been created for those who don't need the RAILS "magic" and bloat. Can easily create different architectures, like STAR, CQRS..., and MVC.
+It has been created for those who don't need the RAILS "magic" and bloat. Can easily create different architectures, like STAR, CQRS, DDD..., and MVC.
 
 Pico API is just a collection of the fastest ruby libraries put together to form a basic API environment, with the JSON:API specification. It doesn't create any folder structures for your business logic, it only creates the initial configurations to get you started.
 
@@ -38,6 +38,11 @@ Migration info: https://rom-rb.org/5.0/learn/sql/migrations/
 - Run the migrations: `rake db:migrate`
 - Run the server:     `rackup -p 3001`
 
+### Routing
+
+Routing info: https://github.com/jeremyevans/roda 
+
+Add routing info in `config/application.rb` file 
 
 ## Development
 - [x] Create Database config
