@@ -1,9 +1,11 @@
 PicoApi.configure do |config|
   ## the base namespace of your app
-  config.namespace       = "<%= @project_name_camelcased %>"
+  config.namespace = "<%= @project_name_camelcased %>"
 
   ## the root directory where all the business logic resides
-  config.lib_path        = "lib/<%= @project_name_snakecased %>"
+  config.lib_path = "lib/<%= @project_name_snakecased %>"
+
+  config.logger = Logger.new(STDOUT) if ENV['LOG_TO_STDOUT'] == 'true'
 
   ## Add your custom exception mappings -> { exception: status_code }.
   # PicoApi serializes runtime exceptions to json-api specification error objects

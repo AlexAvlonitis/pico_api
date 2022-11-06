@@ -48,7 +48,7 @@ Add routing info in `config/application.rb` file
 - [x] Create Database config
 - [x] Hook a json-api library
 - [x] Handle Errors
-- [ ] Create a Logger config
+- [x] Create a Logger config
 - [ ] Create a testing environment
 - [x] Allow multiple db gateways in the config
 - [ ] Add irb/pry console script
