@@ -21,7 +21,7 @@ module PicoApi
 
   class Configuration
     attr_reader :db_config
-    attr_accessor :namespace, :lib_path, :errors_map
+    attr_accessor :namespace, :lib_path, :errors_map, :logger
 
     def initialize(db_config)
       @db_config = db_config

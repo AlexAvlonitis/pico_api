@@ -3,7 +3,8 @@
 RSpec.describe PicoApi::Database do
   subject { described_class }
 
-  let(:configuration) { double(:configuration, db_config: db_config) }
+  let(:configuration) { double(:configuration, db_config: db_config, logger: logger) }
+  let(:logger) { instance_double(Logger) }
   let(:db_config) do
     {
       default: {
@@ -36,7 +37,12 @@ RSpec.describe PicoApi::Database do
     expect(subject.container.gateways[:default]).to be_present
   end
 
-   it "includes the legacy gateway" do
+  it "includes the legacy gateway" do
     expect(subject.container.gateways[:legacy]).to be_present
+  end
+
+  it "includes a logger in all the gateways" do
+    expect(subject.container.gateways[:default].logger).to eq(logger)
+    expect(subject.container.gateways[:legacy].logger).to eq(logger)
   end
 end
