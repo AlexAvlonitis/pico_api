@@ -40,9 +40,9 @@ Migration info: https://rom-rb.org/5.0/learn/sql/migrations/
 
 ### Routing
 
-Routing info: https://github.com/jeremyevans/roda 
+Routing info: https://github.com/jeremyevans/roda
 
-Add routing info in `config/application.rb` file 
+Add routing info in `config/application.rb` file
 
 ## Development
 - [x] Create Database config
@@ -52,6 +52,7 @@ Add routing info in `config/application.rb` file
 - [ ] Create a testing environment
 - [x] Allow multiple db gateways in the config
 - [ ] Add irb/pry console script
+- [ ] Seperate configs to different environments (dev, prod, etc..)
 
 ## Contributing
 
