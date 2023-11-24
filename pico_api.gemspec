@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rom', '~> 5'
   spec.add_runtime_dependency 'rom-sql', '~> 3.5'
   spec.add_runtime_dependency 'zeitwerk', '~> 2.6'
+  spec.add_runtime_dependency 'activesupport', '~> 7.0.8'
 end
