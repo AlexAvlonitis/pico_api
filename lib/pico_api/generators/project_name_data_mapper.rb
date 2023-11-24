@@ -2,12 +2,16 @@
 
 module PicoApi
   module Generators
-    class ProjectNameConverter
+    class ProjectNameDataMapper
       attr_reader :camelcased, :snakecased
 
       def initialize(project_name)
         @camelcased = project_name.camelize
         @snakecased = project_name.underscore
+      end
+
+      def get_binding
+        binding
       end
     end
   end

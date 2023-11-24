@@ -6,13 +6,13 @@ module PicoApi
   module Generators
     class FileCopier
       def self.build(project_name)
-        project_name_converter = ProjectNameConverter.new(project_name)
+        project_name_data_mapper = ProjectNameDataMapper.new(project_name)
 
-        new(project_name_converter)
+        new(project_name_data_mapper)
       end
 
-      def initialize(project_name_converter)
-        @project_name_converter = project_name_converter
+      def initialize(project_name_data_mapper)
+        @project_name_data_mapper = project_name_data_mapper
       end
 
       def copy(template_file_path, destination_path)
@@ -23,10 +23,10 @@ module PicoApi
 
       private
 
-      attr_reader :project_name_converter
+      attr_reader :project_name_data_mapper
 
       def snakecased_name
-        project_name_converter.snakecased
+        project_name_data_mapper.snakecased
       end
 
       def template_full_file_path(template_relative_path)

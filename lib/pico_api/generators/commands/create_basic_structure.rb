@@ -7,14 +7,14 @@ module PicoApi
     module Commands
       class CreateBasicStructure
         def self.call(project_name)
-          project_name_converter =
-            ::PicoApi::Generators::ProjectNameConverter.new(project_name)
+          project_name_data_mapper =
+            ::PicoApi::Generators::ProjectNameDataMapper.new(project_name)
 
-          new(project_name_converter).call
+          new(project_name_data_mapper).call
         end
 
-        def initialize(project_name_converter)
-          @project_name_converter = project_name_converter
+        def initialize(project_name_data_mapper)
+          @project_name_data_mapper = project_name_data_mapper
         end
 
         def call
@@ -25,7 +25,7 @@ module PicoApi
 
         private
 
-        attr_reader :project_name_converter
+        attr_reader :project_name_data_mapper
 
         def create_bin_folder
           FileUtils.mkdir_p("#{snakecased_name}/bin")
@@ -40,7 +40,7 @@ module PicoApi
         end
 
         def snakecased_name
-          project_name_converter.snakecased
+          project_name_data_mapper.snakecased
         end
       end
     end
