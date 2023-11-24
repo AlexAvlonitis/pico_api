@@ -5,19 +5,24 @@ module PicoApi
     class Generator
       class << self
         def call(project_name)
-          commands = load_commands
-          new(project_name, commands).call
+          new(project_name, loaded_commands).call
         end
 
-        def load_commands
-          skip_commands = %w[base copytemplate createtemplate]
-
-          Dir[File.join(PicoApi.lib_path, '/generators/commands/*.rb')].sort.map do |file_path|
-            file_name = file_path.split('/').last.gsub('.rb', '').camelize
-            next if skip_commands.include?(file_name.downcase)
-
+        def loaded_commands
+          command_files.sort.map do |file_path|
+            file_name = camelized_file_name(file_path)
             "PicoApi::Generators::Commands::#{file_name}".constantize
           end.compact
+        end
+
+        private
+
+        def command_files
+          Dir[File.join(PicoApi.lib_path, '/generators/commands/*.rb')]
+        end
+
+        def camelized_file_name(file_path)
+          file_path.split('/').last.gsub('.rb', '').camelize
         end
       end
 

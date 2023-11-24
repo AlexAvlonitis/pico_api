@@ -1,9 +1,9 @@
 PicoApi.configure do |config|
   ## the base namespace of your app
-  config.namespace = "<%= @project_name_camelcased %>"
+  config.namespace = "<%= @camelcased_name %>"
 
   ## the root directory where all the business logic resides
-  config.lib_path = "lib/<%= @project_name_snakecased %>"
+  config.lib_path = "lib/<%= @snakecased_name %>"
 
   config.logger = Logger.new(STDOUT) if ENV['LOG_TO_STDOUT'] == 'true'
 

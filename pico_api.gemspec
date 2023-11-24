@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = PicoApi::VERSION
   spec.authors       = ['Alex Avlonitis']
 
-  spec.summary       = 'A tiny Rack-based ruby template for APIs'
-  spec.description   = 'A tiny Rack-based ruby template for APIs'
+  spec.summary       = 'A tiny Rack-based ruby template for building JSON-API REST APIs'
+  spec.description   = 'A tiny Rack-based ruby template for building JSON-API REST APIs'
   spec.homepage      = 'https://github.com/alexavlonitis/pico_api'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
